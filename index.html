@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koninklijke Wandelklub Halewijn vzw</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="season-background"></div>
+    <header>
+        <img src="assets/logo.png" alt="Koninklijke Wandelklub Halewijn vzw Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#nieuws">Nieuws</a></li>
+                <li><a href="#activiteiten">Activiteiten</a></li>
+                <li><a href="#clubblad">Clubblad</a></li>
+                <li><a href="#fotogalerij">Fotogalerij</a></li>
+                <li><a href="#poll">Poll</a></li>
+                <li><a href="#lidmaatschap">Lidmaatschap</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="welcome-section">
+            <h1>Welkom bij Koninklijke Wandelklub Halewijn vzw!</h1>
+            <p id="personal-greeting">Hallo bezoeker! Het is vandaag <span id="current-day"></span>, de <span id="current-date"></span>.<br>
+            Tijd: <span id="current-time"></span><br>
+            Dag van de maand: <span id="day-month"></span><br>
+            Week van het jaar: <span id="week-year"></span></p>
+
+            <div id="search-bar">
+                <input type="search" placeholder="Zoek op de site..." id="site-search">
+                <button onclick="searchSite()">Zoeken</button>
+            </div>
+        </section>
+
+        <section id="nieuws">
+            <h2>Laatste nieuws</h2>
+            <div id="news-items">
+                <!-- Nieuwsberichten komen hier -->
+            </div>
+        </section>
+
+        <section id="activiteiten">
+            <h2>Activiteitenkalender 2026-2027</h2>
+            <div id="calendar">
+                <!-- Kalender komt hier -->
+            </div>
+        </section>
+
+        <section id="clubblad">
+            <h2>Clubblad</h2>
+            <div id="clubblad-editions">
+                <!-- Clubblad uitgaven komen hier -->
+            </div>
+        </section>
+
+        <section id="prijsvraag">
+            <h2>Prijsvraag</h2>
+            <form id="prijsvraag-form">
+                <label for="deelnemer-naam">Naam:</label><br>
+                <input type="text" id="deelnemer-naam" name="deelnemer-naam" required><br>
+
+                <label for="deelnemer-email">Email:</label><br>
+                <input type="email" id="deelnemer-email" name="deelnemer-email" required><br>
+
+                <label for="schiftingsvraag">Hoeveel deelnames verwacht u dit seizoen?</label><br>
+                <input type="number" id="schiftingsvraag" name="schiftingsvraag" min="1" required><br>
+
+                <button type="submit">Deelnemen</button>
+            </form>
+            <p id="prijsvraag-feedback"></p>
+        </section>
+
+        <section id="fotogalerij">
+            <h2>Fotogalerij</h2>
+            <div id="albums">
+                <h3>Wandelingen</h3>
+                <div id="wanderings-album" class="album">
+                    <!-- Foto's wandelingen -->
+                </div>
+                <h3>Andere activiteiten</h3>
+                <div id="other-activities-album" class="album">
+                    <!-- Foto's andere activiteiten -->
+                </div>
+            </div>
+        </section>
+
+        <section id="interactief">
+            <h2>Reageer, geef suggesties</h2>
+            <form id="feedback-form">
+                <label for="feedback-name">Naam:</label><br>
+                <input type="text" id="feedback-name" name="feedback-name" required><br>
+
+                <label for="feedback-message">Bericht:</label><br>
+                <textarea id="feedback-message" name="feedback-message" rows="4" required></textarea><br>
+
+                <button type="submit">Plaats reactie</button>
+            </form>
+
+            <div id="feedback-list">
+                <!-- Reacties verschijnen hier -->
+            </div>
+        </section>
+
+        <section id="poll">
+            <h2>Poll</h2>
+            <p>Heb je een mening? Ja, Nee, Geen mening</p>
+            <form id="poll-form">
+                <input type="radio" id="poll-ja" name="poll" value="ja" required>
+                <label for="poll-ja">Ja</label><br>
+                <input type="radio" id="poll-nee" name="poll" value="nee">
+                <label for="poll-nee">Nee</label><br>
+                <input type="radio" id="poll-geen" name="poll" value="geen">
+                <label for="poll-geen">Geen mening</label><br>
+                <button type="submit">Stem</button>
+            </form>
+            <div id="poll-results">
+                <!-- Resultaten poll -->
+            </div>
+        </section>
+
+        <section id="lidmaatschap">
+            <h2>Word lid</h2>
+            <p>Voordelen van lidmaatschap bij onze wandelclub:</p>
+            <ul>
+                <li>Regelmatige georganiseerde wandelingen</li>
+                <li>Korting op clubactiviteiten en evenementen</li>
+                <li>Toegang tot exclusieve clubbladuitgaven</li>
+                <li>Gezelligheid en nieuwe contacten</li>
+                <li>Gezonde en actieve levensstijl</li>
+            </ul>
+            <form id="membership-form">
+                <label for="member-name">Naam:</label><br>
+                <input type="text" id="member-name" name="member-name" required><br>
+
+                <label for="member-email">Email:</label><br>
+                <input type="email" id="member-email" name="member-email" required><br>
+
+                <label for="member-phone">Telefoonnummer:</label><br>
+                <input type="tel" id="member-phone" name="member-phone"><br>
+
+                <button type="submit">Inschrijven</button>
+            </form>
+            <p id="membership-feedback"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div id="visitor-counter">Bezoekers: <span id="visitor-count">0</span></div>
+        <div id="contact-info">
+            <p>Koninklijke Wandelklub Halewijn vzw</p>
+            <p>Adres: Halewijnlaan 123, 1000 Brussel</p>
+            <p>Telefoon: +32 2 123 45 67</p>
+            <p>Email: info@kwkhalewijn.be</p>
+        </div>
+        <p>&copy; 2025 Koninklijke Wandelklub Halewijn vzw</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
